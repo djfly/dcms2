@@ -20,12 +20,14 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['View'],
+                        'actions' => ['view'],
                         'allow' => true,
                         'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return Yii::$app->user->identity->id == Yii::$app->request->getQueryParam('id') ;
+                        }
                     ],
                 ],
             ],
@@ -55,9 +57,10 @@ class UserController extends Controller
         $userform->username=$model->username;
         $userform->email=$model->email;
         if ($userform->load(Yii::$app->request->post()) && $userform->validate()) {
-
+            $types=['.gif', '.jpg', '.png'];
             $image=UploadedFile::getInstance($userform,'avatar');
-            if(!empty($image->name)){
+            
+            if(!empty($image->name) && in_array(strrchr(strtolower($image->name),'.'), $types)){
                 $dir=BASE_PATH.'/upload/avatar/';
                 if(!is_dir($dir)) {
                     @mkdir($dir, 0777);
