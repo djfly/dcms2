@@ -1,3 +1,3 @@
 <script type="text/javascript">
-document.write("Hello World!")
+alert("Hello World!");
 </script>
