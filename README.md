@@ -1,4 +1,4 @@
-dcms2 1
+dcms2
 =====
 
 dcms2 basic on yii2
