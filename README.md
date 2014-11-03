@@ -11,4 +11,3 @@ demo:[www.cmsboom.com](http://www.cmsboom.com)
 
 kindeditor 没有包含文件，需要单独下载放入vendor\djfly\kindeditor\assets
 
-[![Build Status](http://git-scm.com/figures/18333fig0101-tn.png)](http://git-scm.com/figures/18333fig0101-tn.png)
