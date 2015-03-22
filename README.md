@@ -1,7 +1,7 @@
 dcms2
 =====
 
-dcms2 basic on         yii2
+dcms2 basic on yii2
 
 screenshots
 
