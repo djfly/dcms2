@@ -16,7 +16,7 @@ use app\models\Post;
 use app\models\Comment;
 use app\components\Common;
 use yii\data\Pagination;
-
+use yii\models\PasswordResetRequestForm;
 class SiteController extends Controller
 {
     public function behaviors()
