@@ -24,14 +24,14 @@ $this->registerMetaTag(['name' => 'description', 'content' => $siteInfo['siteDes
             <a href="<?= Url::to(['post/view', 'id' => $headline->id]) ?>"><img src="<?= $headline->thumbnail ?>" alt="<?= Html::encode($headline->title) ?>" style="width:100%;"></a>
         </div>
         <?php endif ?>
-        <?php if ($recommend[0]): ?>
+        <?php if (!empty($recommend[0])): ?>
         <div class="recommend clearfix">
             <div class="pull-left" style="width:48%">
                 <h4><a href="<?= Url::to(['post/view', 'id' => $recommend[0]['id']]) ?>"><?= Html::encode($recommend[0]['title']) ?></a></h4>
                 <a href="<?= Url::to(['post/view', 'id' => $recommend[0]['id']]) ?>"><img src="<?= $recommend[0]['thumbnail'] ?>" alt="<?= Html::encode($recommend[0]['title']) ?>" style="width:280px;"></a>
                 <p><?= Html::encode($recommend[0]->MakeSummary) ?></p>
             </div>
-            <?php if ($recommend[1]): ?>
+            <?php if (!empty($recommend[1])): ?>
             <div class="pull-right" style="width:48%">
                 <h4><a href="<?= Url::to(['post/view', 'id' => $recommend[1]['id']]) ?>"><?= Html::encode($recommend[1]['title']) ?></a></h4>
                 <a href="<?= Url::to(['post/view', 'id' => $recommend[1]['id']]) ?>"><img src="<?= $recommend[1]['thumbnail'] ?>" alt="<?= Html::encode($recommend[1]['title']) ?>" style="width:280px;"></a>
